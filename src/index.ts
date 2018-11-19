@@ -1,11 +1,11 @@
-import discord from "webhook-discord";
+import webhookDiscord from "webhook-discord";
 
-import { IDiscordConfig, IDiscord } from "./interfaces";
+import { IDiscordConfig } from "./interfaces";
 
-let DiscordWebhook = null;
+let DiscordWebhook = new webhookDiscord.Webhook();
 
-const monif = ({discord}: IDiscordConfig) => {
-  DiscordWebhook = new discord.Webhook(discord.url);
+const monif = ({ discord }: IDiscordConfig) => {
+  DiscordWebhook = new webhookDiscord.Webhook(discord.url);
 };
 
 const discord = (
@@ -18,14 +18,11 @@ const discord = (
 ) => {
   try {
     f();
-    DiscordWebhook.success(
-      webhookName
-      successMessage,
-    );
+    DiscordWebhook.success(webhookName, successMessage);
   } catch (err) {
-    DiscordWebhook.err(
-      webhookName,
-      errorMessage,
-    );
+    DiscordWebhook.err(webhookName, errorMessage);
   }
 };
+
+export { discord };
+export default monif;

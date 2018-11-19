@@ -8,6 +8,6 @@ export interface IDiscord {
     webhookName: string
 }
 
-export interface IDiscordConfig {
-  discord: IDiscord;
+export interface IConfig {
+  discord: IDiscordConfig;
 }
