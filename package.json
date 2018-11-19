@@ -1,0 +1,10 @@
+{
+  "name": "monif",
+  "description": "Monitoring Function",
+  "version": "0.0.1",
+  "author": "Rodrigo Oler <roodrigoprogrammer@gmail.com>",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "private": false,
+  "repository": "git@github.com:rodrigooler/monif.git"
+}
